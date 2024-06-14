@@ -23,6 +23,31 @@ const songs = [
     artist: "Elvin Bishop",
     genre: "Rock",
   },
+  {
+    title: "Me Gustas Tu",
+    artist: "Manu Chao",
+    genre: "Rock",
+  },
+  {
+    title: "Not Like Us",
+    artist: "Kendrick Lamar",
+    genre: "Hip-Hop/Rap",
+  },
+  {
+    title: "The Way",
+    artist: "Ariana Grande",
+    genre: "R&B",
+  },
+  {
+    title: "Seven",
+    artist: "Jung Kook",
+    genre: "Pop",
+  },
+  {
+    title: "Drunk",
+    artist: "ScHoolboy Q",
+    genre: "Hip-Hop/Rap",
+  },
   // Feel free to add even more songs
 ];
 
@@ -30,6 +55,9 @@ const songs = [
 const guardians = {
   "Star-Lord": "Rock",
   Gamora: "Pop",
+  Drax: "Hip-Hop/Rap",
+  Rocket: "Hip-Hop/Rap",
+  Groot: "R&B/Soul",
   // Add preferences for Drax, Rocket, and Groot
 };
 
@@ -38,6 +66,13 @@ function generatePlaylist(guardians, songs) {
   // Use the map() function to create playlists for each Guardian
   // Your code here
 }
-
+const songNameGenre = songs.map((genre) => genre.genre);
+const guardiansFavGenre = Object.values(guardians);
+for (let i = 0; i < songNameGenre.length; i++) {
+  console.log(songNameGenre[i]);
+}
+for (let i = 0; i < guardiansFavGenre.length; i++) {
+  console.log(guardiansFavGenre[i]);
+}
 // Call generatePlaylist and display the playlists for each Guardian
-generatePlaylist(guardians, songs);
+// generatePlaylist(guardians, songs);
