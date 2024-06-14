@@ -57,7 +57,7 @@ const guardians = {
   Gamora: "Pop",
   Drax: "Hip-Hop/Rap",
   Rocket: "Hip-Hop/Rap",
-  Groot: "R&B/Soul",
+  Groot: "R&B",
   // Add preferences for Drax, Rocket, and Groot
 };
 
@@ -66,13 +66,21 @@ function generatePlaylist(guardians, songs) {
   // Use the map() function to create playlists for each Guardian
   // Your code here
 }
-const songNameGenre = songs.map((genre) => genre.genre);
+const genreRock = songs.filter((genre) => genre.genre === "Rock");
+const genrePop = songs.filter((genre) => genre.genre === "Pop");
+const genreRap = songs.filter((genre) => genre.genre === "Hip-Hop/Rap");
+const genreRnB = songs.filter((genre) => genre.genre === "R&B");
 const guardiansFavGenre = Object.values(guardians);
-for (let i = 0; i < songNameGenre.length; i++) {
-  console.log(songNameGenre[i]);
+
+for (let i = 0; i < genreRock.length; i++) {
+  // console.log(genreRock[i]);
 }
 for (let i = 0; i < guardiansFavGenre.length; i++) {
-  console.log(guardiansFavGenre[i]);
+  // console.log(guardiansFavGenre[i]);
+  if (guardiansFavGenre[i] === "Rock") {
+    console.log(`This is Star-Lord's playlist:
+      ${genreRock.map((artist) => artist.title)}`);
+  }
 }
 // Call generatePlaylist and display the playlists for each Guardian
 // generatePlaylist(guardians, songs);
