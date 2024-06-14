@@ -72,14 +72,51 @@ const genreRap = songs.filter((genre) => genre.genre === "Hip-Hop/Rap");
 const genreRnB = songs.filter((genre) => genre.genre === "R&B");
 const guardiansFavGenre = Object.values(guardians);
 
-for (let i = 0; i < genreRock.length; i++) {
-  // console.log(genreRock[i]);
-}
+const divPlaylist = document.getElementById("playlists");
+
+const starLordDiv = document.createElement("div");
+const starLord = document.createElement("h2");
+starLordDiv.className = "playlist";
+starLord.textContent = "Star-Lord's Playlist";
+divPlaylist.appendChild(starLordDiv);
+starLordDiv.appendChild(starLord);
+
+const gamoraDiv = document.createElement("div");
+const gamora = document.createElement("h2");
+gamoraDiv.className = "playlist";
+gamora.textContent = "Gamora's Playlist";
+divPlaylist.appendChild(gamoraDiv);
+gamoraDiv.appendChild(gamora);
+
+const heading3 = document.createElement("h2");
+heading3.className = "playlist";
+heading3.textContent = "Drax's Playlist";
+divPlaylist.appendChild(heading3);
+
+const heading4 = document.createElement("h2");
+heading4.className = "playlist";
+heading4.textContent = "Rocket's Playlist";
+divPlaylist.appendChild(heading4);
+
+const heading5 = document.createElement("h2");
+heading5.className = "playlist";
+heading5.textContent = "Groot's Playlist";
+divPlaylist.appendChild(heading5);
+
 for (let i = 0; i < guardiansFavGenre.length; i++) {
-  // console.log(guardiansFavGenre[i]);
+  const text = document.createElement("p");
+  const songTitle = document.createElement("span");
+  text.className = "song";
+  songTitle.className = "song-title";
+
   if (guardiansFavGenre[i] === "Rock") {
-    console.log(`This is Star-Lord's playlist:
-      ${genreRock.map((artist) => artist.title)}`);
+    genreRock.forEach((artist) => {
+      text.textContent = `Artist: ${artist.artist}, Song: `;
+      songTitle.textContent = artist.title;
+      console.log(text);
+      starLordDiv.appendChild(text);
+      text.appendChild(songTitle);
+    });
   }
 }
 // Call generatePlaylist and display the playlists for each Guardian

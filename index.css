@@ -13,6 +13,12 @@ h1 {
   font-size: 36px; /* Larger font size */
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Text shadow for headings */
 }
+h2 {
+  color: #ffffff; /* Gold color for headings */
+  font-family: "Pacifico", cursive; /* Fun font for headings */
+  font-size: 30px; /* Larger font size */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Text shadow for headings */
+}
 
 .playlist {
   margin: 20px;
