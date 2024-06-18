@@ -65,59 +65,65 @@ const guardians = {
 function generatePlaylist(guardians, songs) {
   // Use the map() function to create playlists for each Guardian
   // Your code here
-}
-const genreRock = songs.filter((genre) => genre.genre === "Rock");
-const genrePop = songs.filter((genre) => genre.genre === "Pop");
-const genreRap = songs.filter((genre) => genre.genre === "Hip-Hop/Rap");
-const genreRnB = songs.filter((genre) => genre.genre === "R&B");
-const guardiansFavGenre = Object.values(guardians);
+  const genreRock = songs.filter((genre) => genre.genre === "Rock");
+  const genrePop = songs.filter((genre) => genre.genre === "Pop");
+  const genreRap = songs.filter((genre) => genre.genre === "Hip-Hop/Rap");
+  const genreRnB = songs.filter((genre) => genre.genre === "R&B");
+  const guardiansFavGenre = Object.values(guardians);
 
-const divPlaylist = document.getElementById("playlists");
+  const divPlaylist = document.getElementById("playlists");
 
-const starLordDiv = document.createElement("div");
-const starLord = document.createElement("h2");
-starLordDiv.className = "playlist";
-starLord.textContent = "Star-Lord's Playlist";
-divPlaylist.appendChild(starLordDiv);
-starLordDiv.appendChild(starLord);
+  const starLordDiv = document.createElement("div");
+  const starLord = document.createElement("h2");
+  starLordDiv.className = "playlist";
+  starLord.textContent = "Star-Lord's Playlist";
+  divPlaylist.appendChild(starLordDiv);
+  starLordDiv.appendChild(starLord);
 
-const gamoraDiv = document.createElement("div");
-const gamora = document.createElement("h2");
-gamoraDiv.className = "playlist";
-gamora.textContent = "Gamora's Playlist";
-divPlaylist.appendChild(gamoraDiv);
-gamoraDiv.appendChild(gamora);
+  const gamoraDiv = document.createElement("div");
+  const gamora = document.createElement("h2");
+  gamoraDiv.className = "playlist";
+  gamora.textContent = "Gamora's Playlist";
+  divPlaylist.appendChild(gamoraDiv);
+  gamoraDiv.appendChild(gamora);
 
-const heading3 = document.createElement("h2");
-heading3.className = "playlist";
-heading3.textContent = "Drax's Playlist";
-divPlaylist.appendChild(heading3);
+  const drax = document.createElement("h2");
+  const draxDiv = document.createElement("div");
+  draxDiv.className = "playlist";
+  drax.textContent = "Drax's Playlist";
+  divPlaylist.appendChild(draxDiv);
+  draxDiv.appendChild(drax);
 
-const heading4 = document.createElement("h2");
-heading4.className = "playlist";
-heading4.textContent = "Rocket's Playlist";
-divPlaylist.appendChild(heading4);
+  const rocketDiv = document.createElement("div");
+  const rocket = document.createElement("h2");
+  rocketDiv.className = "playlist";
+  rocket.textContent = "Rocket's Playlist";
+  divPlaylist.appendChild(rocketDiv);
+  rocketDiv.appendChild(rocket);
 
-const heading5 = document.createElement("h2");
-heading5.className = "playlist";
-heading5.textContent = "Groot's Playlist";
-divPlaylist.appendChild(heading5);
+  const grootDiv = document.createElement("div");
+  const groot = document.createElement("h2");
+  grootDiv.className = "playlist";
+  groot.textContent = "Groot's Playlist";
+  divPlaylist.appendChild(grootDiv);
+  grootDiv.appendChild(groot);
 
-for (let i = 0; i < guardiansFavGenre.length; i++) {
-  const text = document.createElement("p");
-  const songTitle = document.createElement("span");
-  text.className = "song";
-  songTitle.className = "song-title";
+  for (let i = 0; i < guardiansFavGenre.length; i++) {
+    const text = document.createElement("p");
+    const songTitle = document.createElement("span");
+    text.className = "song";
+    songTitle.className = "song-title";
 
-  if (guardiansFavGenre[i] === "Rock") {
-    genreRock.forEach((artist) => {
-      text.textContent = `Artist: ${artist.artist}, Song: `;
-      songTitle.textContent = artist.title;
-      console.log(text);
-      starLordDiv.appendChild(text);
-      text.appendChild(songTitle);
-    });
+    if (guardians["Star-Lord"] === "Rock") {
+      genreRock.forEach((artist) => {
+        text.textContent = `Artist: ${artist.artist}; Song: `;
+        songTitle.textContent = artist.title;
+        starLordDiv.appendChild(text);
+        text.appendChild(songTitle);
+      });
+    }
   }
 }
+
 // Call generatePlaylist and display the playlists for each Guardian
-// generatePlaylist(guardians, songs);
+generatePlaylist(guardians, songs);
