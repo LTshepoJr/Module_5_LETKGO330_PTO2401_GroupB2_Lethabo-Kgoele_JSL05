@@ -72,7 +72,7 @@ function generatePlaylist(guardians, songs) {
   const guardiansFavGenre = Object.values(guardians);
 
   const divPlaylist = document.getElementById("playlists");
-
+  // obsedian == 15
   const starLordDiv = document.createElement("div");
   const starLord = document.createElement("h2");
   starLordDiv.className = "playlist";
@@ -108,20 +108,15 @@ function generatePlaylist(guardians, songs) {
   divPlaylist.appendChild(grootDiv);
   grootDiv.appendChild(groot);
 
-  for (let i = 0; i < guardiansFavGenre.length; i++) {
+  for (let genre of genreRock) {
     const text = document.createElement("p");
     const songTitle = document.createElement("span");
     text.className = "song";
     songTitle.className = "song-title";
-
-    if (guardians["Star-Lord"] === "Rock") {
-      genreRock.forEach((artist) => {
-        text.textContent = `Artist: ${artist.artist}; Song: `;
-        songTitle.textContent = artist.title;
-        starLordDiv.appendChild(text);
-        text.appendChild(songTitle);
-      });
-    }
+    text.textContent = ` by ${genre.artist}`;
+    songTitle.textContent = genre.title;
+    starLordDiv.appendChild(text);
+    text.insertBefore(songTitle, text.firstChild);
   }
 }
 
