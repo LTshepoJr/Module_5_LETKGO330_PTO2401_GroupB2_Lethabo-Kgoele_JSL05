@@ -118,6 +118,47 @@ function generatePlaylist(guardians, songs) {
     starLordDiv.appendChild(text);
     text.insertBefore(songTitle, text.firstChild);
   }
+
+  for (let genre of genreRap) {
+    const text = document.createElement("p");
+    const songTitle = document.createElement("span");
+    text.className = "song";
+    songTitle.className = "song-title";
+    text.textContent = ` by ${genre.artist}`;
+    songTitle.textContent = genre.title;
+    draxDiv.appendChild(text);
+    text.insertBefore(songTitle, text.firstChild);
+  }
+  for (let genre of genreRnB) {
+    const text = document.createElement("p");
+    const songTitle = document.createElement("span");
+    text.className = "song";
+    songTitle.className = "song-title";
+    text.textContent = ` by ${genre.artist}`;
+    songTitle.textContent = genre.title;
+    grootDiv.appendChild(text);
+    text.insertBefore(songTitle, text.firstChild);
+  }
+  for (let genre of genreRap) {
+    const text = document.createElement("p");
+    const songTitle = document.createElement("span");
+    text.className = "song";
+    songTitle.className = "song-title";
+    text.textContent = ` by ${genre.artist}`;
+    songTitle.textContent = genre.title;
+    rocketDiv.appendChild(text);
+    text.insertBefore(songTitle, text.firstChild);
+  }
+  for (let genre of genrePop) {
+    const text = document.createElement("p");
+    const songTitle = document.createElement("span");
+    text.className = "song";
+    songTitle.className = "song-title";
+    text.textContent = ` by ${genre.artist}`;
+    songTitle.textContent = genre.title;
+    gamoraDiv.appendChild(text);
+    text.insertBefore(songTitle, text.firstChild);
+  }
 }
 
 // Call generatePlaylist and display the playlists for each Guardian
